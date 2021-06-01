@@ -1,0 +1,40 @@
+name: DeployNewVersion
+
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Create Zip File
+      uses: thedoctor0/zip-release@master
+      with:
+        filename: 'release.zip'
+        exclusions: '*.git* *.github* README.md server-icon.png'
+
+    - name: List Files
+      run: ls
+
+    - name: Upload Release Version
+      uses: svenstaro/upload-release-action@v2
+      with:
+        repo_token: ${{ secrets.TOKEN }}
+        file: release.zip
+        asset_name: modpack.zip
+        tag: pack_1
+        overwrite: true
+
+    - name: Notify Discord
+      uses: rjstone/discord-webhook-notify@v1
+      with:
+        severity: info
+        webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
+        username: OnixMC
+        color: '#f78520'
+        avatarUrl: 'https://raw.githubusercontent.com/OnixMC/OnixPacks/master/server-icon.png'
+        description: Nova versão do modpack disponibilizada.
+        # details: 'http://api.technicpack.net/modpack/de-volta-para-o-futuro-tkcraft'
