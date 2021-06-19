@@ -37,4 +37,4 @@ jobs:
         color: '#f78520'
         avatarUrl: 'https://raw.githubusercontent.com/OnixMC/OnixPacks/master/server-icon.png'
         description: Nova versão do modpack disponibilizada.
-        # details: 'http://api.technicpack.net/modpack/de-volta-para-o-futuro-tkcraft'
+        # details: 'http://api.technicpack.net/modpack/modpack_name'
