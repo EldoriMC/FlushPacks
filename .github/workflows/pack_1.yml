@@ -16,6 +16,17 @@ jobs:
         filename: 'release.zip'
         exclusions: '*.git* *.github* README.md server-icon.png'
 
+    - name: Create Another Folder and Copy of content
+      run: |
+        mkdir OnixMC/.minecraft
+        copy mods OnixMC/.minecraft/mods
+        copy config OnixMC/.minecraft/config
+        copy server-icon.png OnixMC
+        cd OnixMC
+        ls
+        cd .minecraft
+        ls
+
     - name: List Files
       run: ls
 
