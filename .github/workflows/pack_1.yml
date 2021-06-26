@@ -17,6 +17,8 @@ jobs:
         sudo rsync -a mods OnixMC/.minecraft/
         sudo rsync -a config OnixMC/.minecraft/
         sudo rsync -a server-icon.png OnixMC/
+        sudo rsync -a instance.cfg OnixMC/
+        sudo rsync -a mmc-pack.json OnixMC/
 
     - name: Create Technic Zip File
       uses: thedoctor0/zip-release@master
@@ -28,7 +30,7 @@ jobs:
       uses: thedoctor0/zip-release@master
       with:
         filename: 'multimc.zip'
-        exclusions: '*.git* *.github* mods/* bin/* config/* README.md server-icon.png technic.zip'
+        exclusions: '*.git* *.github* /mods/* /bin/* /config/* README.md server-icon.png server-icon.png instance.cfg technic.zip'
 
     - name: List Files
       run: ls
