@@ -10,23 +10,23 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Create Zip File
-      uses: thedoctor0/zip-release@master
-      with:
-        filename: 'technic.zip'
-        exclusions: '*.git* *.github* README.md server-icon.png'
-
-    - name: Create Another Folder and Copy of content
+    - name: Configure folder to MultiMC
       run: |
         sudo mkdir /OnixMC
         sudo mkdir /OnixMC/.minecraft
-        copy mods /OnixMC/.minecraft/mods
-        copy config /OnixMC/.minecraft/config
-        copy server-icon.png /OnixMC
+        cp -a /mods/. /OnixMC/.minecraft/
+        cp -a /config/. /OnixMC/.minecraft/
+        cp -a /server-icon.png /OnixMC/
         cd OnixMC
         ls
         cd .minecraft
         ls
+
+    - name: Create Zip File
+      uses: thedoctor0/zip-release@master
+      with:
+        filename: 'technic.zip'
+        exclusions: '*.git* *.github* README.md server-icon.png *OnixMC*'
 
     - name: List Files
       run: ls
