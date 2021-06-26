@@ -49,7 +49,7 @@ jobs:
       with:
         repo_token: ${{ secrets.TOKEN }}
         file: multimc.zip
-        asset_name: modpack_multimc.zip
+        asset_name: OnixMC.zip
         tag: pack_1
         overwrite: true
 
