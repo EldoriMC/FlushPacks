@@ -17,9 +17,10 @@ jobs:
         sudo rsync -a mods /OnixMC/.minecraft/
         sudo rsync -a config /OnixMC/.minecraft/
         sudo rsync -a server-icon.png /OnixMC/
-        cd OnixMC
         ls
-        cd .minecraft
+        cd /OnixMC
+        ls
+        cd /.minecraft
         ls
 
     - name: Create Zip File
