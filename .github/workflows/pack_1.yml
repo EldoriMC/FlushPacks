@@ -22,13 +22,13 @@ jobs:
       uses: thedoctor0/zip-release@master
       with:
         filename: 'technic.zip'
-        exclusions: '*.git* *.github* README.md server-icon.png /*OnixMC/*'
+        exclusions: '*.git* *.github* README.md server-icon.png instance.cfg mmc-pack.json /*OnixMC/*'
 
     - name: Create MultiMC Zip File
       uses: thedoctor0/zip-release@master
       with:
         filename: 'multimc.zip'
-        exclusions: '*.git* *.github* *mods/* *bin/* *config/* README.md server-icon.png technic.zip'
+        exclusions: '*.git* *.github* mods/* bin/* config/* README.md server-icon.png technic.zip'
 
     - name: List Files
       run: ls
