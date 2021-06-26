@@ -17,27 +17,37 @@ jobs:
         sudo rsync -a mods OnixMC/.minecraft/
         sudo rsync -a config OnixMC/.minecraft/
         sudo rsync -a server-icon.png OnixMC/
-        ls
-        cd OnixMC
-        ls
-        cd .minecraft
-        ls
 
-    - name: Create Zip File
+    - name: Create Technic Zip File
       uses: thedoctor0/zip-release@master
       with:
         filename: 'technic.zip'
         exclusions: '*.git* *.github* README.md server-icon.png *OnixMC*'
 
+    - name: Create MultiMC Zip File
+      uses: thedoctor0/zip-release@master
+      with:
+        filename: 'multimc.zip'
+        exclusions: '*.git* *.github* *mods* *config* README.md server-icon.png'
+
     - name: List Files
       run: ls
 
-    - name: Upload Release Version
+    - name: Upload Technic Release Version
       uses: svenstaro/upload-release-action@v2
       with:
         repo_token: ${{ secrets.TOKEN }}
         file: technic.zip
-        asset_name: modpack.zip
+        asset_name: modpack_technic.zip
+        tag: pack_1
+        overwrite: true
+
+    - name: Upload MultiMC Release Version
+      uses: svenstaro/upload-release-action@v2
+      with:
+        repo_token: ${{ secrets.TOKEN }}
+        file: multimc.zip
+        asset_name: modpack_multimc.zip
         tag: pack_1
         overwrite: true
 
