@@ -18,10 +18,11 @@ jobs:
 
     - name: Create Another Folder and Copy of content
       run: |
-        mkdir OnixMC/.minecraft
-        copy mods OnixMC/.minecraft/mods
-        copy config OnixMC/.minecraft/config
-        copy server-icon.png OnixMC
+        mkdir /OnixMC
+        mkdir /OnixMC/.minecraft
+        copy mods /OnixMC/.minecraft/mods
+        copy config /OnixMC/.minecraft/config
+        copy server-icon.png /OnixMC
         cd OnixMC
         ls
         cd .minecraft
