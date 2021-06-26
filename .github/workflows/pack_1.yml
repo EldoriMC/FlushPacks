@@ -14,9 +14,9 @@ jobs:
       run: |
         sudo mkdir /OnixMC
         sudo mkdir /OnixMC/.minecraft
-        cp -a /mods /OnixMC/.minecraft/
-        cp -a /config /OnixMC/.minecraft/
-        cp -a /server-icon.png /OnixMC/
+        rsync -a mods /OnixMC/.minecraft/
+        rsync -a config /OnixMC/.minecraft/
+        rsync -a server-icon.png /OnixMC/
         cd OnixMC
         ls
         cd .minecraft
