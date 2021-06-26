@@ -30,7 +30,7 @@ jobs:
       uses: thedoctor0/zip-release@master
       with:
         filename: 'multimc.zip'
-        exclusions: '*.git* *.github* /mods/* /bin/* /config/* README.md server-icon.png server-icon.png instance.cfg technic.zip'
+        exclusions: '*.git* *.github* /mods/* /*bin/* /config/* README.md server-icon.png mmc-pack.json instance.cfg technic.zip'
 
     - name: List Files
       run: ls
