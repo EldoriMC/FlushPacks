@@ -12,15 +12,15 @@ jobs:
 
     - name: Configure folder to MultiMC
       run: |
-        sudo mkdir /OnixMC
-        sudo mkdir /OnixMC/.minecraft
-        sudo rsync -a mods /OnixMC/.minecraft/
-        sudo rsync -a config /OnixMC/.minecraft/
-        sudo rsync -a server-icon.png /OnixMC/
+        sudo mkdir OnixMC
+        sudo mkdir OnixMC/.minecraft
+        sudo rsync -a mods OnixMC/.minecraft/
+        sudo rsync -a config OnixMC/.minecraft/
+        sudo rsync -a server-icon.png OnixMC/
         ls
-        cd /OnixMC
+        cd OnixMC
         ls
-        cd /.minecraft
+        cd .minecraft
         ls
 
     - name: Create Zip File
