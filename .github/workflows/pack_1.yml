@@ -14,6 +14,7 @@ jobs:
       run: |
         sudo mkdir OnixMC
         sudo mkdir OnixMC/.minecraft
+        sudo rsync -a kubejs OnixMC/.minecraft/
         sudo rsync -a mods OnixMC/.minecraft/
         sudo rsync -a config OnixMC/.minecraft/
         sudo rsync -a server-icon.png OnixMC/
@@ -30,7 +31,7 @@ jobs:
       uses: thedoctor0/zip-release@master
       with:
         filename: 'multimc.zip'
-        exclusions: '*.git* *.github* /mods/* /*bin/* /config/* README.md server-icon.png mmc-pack.json instance.cfg technic.zip'
+        exclusions: '*.git* *.github* /mods/* *bin/* /*bin/* */*bin/* /config/* README.md server-icon.png mmc-pack.json instance.cfg technic.zip'
 
     - name: List Files
       run: ls
