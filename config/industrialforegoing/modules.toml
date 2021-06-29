@@ -8,6 +8,9 @@
 		[modules.agriculture.animal_rancher]
 			enabled = true
 
+		[modules.agriculture.hydroponic_bed]
+			enabled = true
+
 		[modules.agriculture.crop_farming]
 			enabled = true
 
@@ -18,6 +21,12 @@
 			enabled = true
 
 		[modules.agriculture.mob_crusher]
+			enabled = true
+
+		[modules.agriculture.mob_duplicator]
+			enabled = true
+
+		[modules.agriculture.wither_builder]
 			enabled = true
 
 		[modules.agriculture.mob_slaughter_factory]
@@ -48,9 +57,6 @@
 		[modules.core.essence]
 			enabled = true
 
-		[modules.core.milk]
-			enabled = true
-
 		[modules.core.dark_glass]
 			enabled = true
 
@@ -78,11 +84,10 @@
 		[modules.core.plastic]
 			enabled = true
 
-		#If enabled the minecraft bucket item will be replaced with bucket that contains IF milk
-		[modules.core.milk_bucket_replacement]
+		[modules.core.meat]
 			enabled = true
 
-		[modules.core.meat]
+		[modules.core.ore_meat]
 			enabled = true
 
 		[modules.core.speed_addons]
@@ -98,6 +103,12 @@
 	[modules.generator]
 		enabled = true
 
+		[modules.generator.pitiful_generator]
+			enabled = true
+
+		[modules.generator.mycelial_reactor]
+			enabled = true
+
 		[modules.generator.biofuel_generator]
 			enabled = true
 
@@ -105,12 +116,6 @@
 			enabled = true
 
 		[modules.generator.bioreactor]
-			enabled = true
-
-		[modules.generator.pitiful_generator]
-			enabled = true
-
-		[modules.generator.mycelial_reactor]
 			enabled = true
 
 	#All the Industrial Foregoing tools that allow of transport of things
@@ -121,6 +126,18 @@
 			enabled = true
 
 		[modules.transport.conveyor_upgrades]
+			enabled = true
+
+		[modules.transport.black_hole_units]
+			enabled = true
+
+		[modules.transport.black_hole_tanks]
+			enabled = true
+
+		[modules.transport.transporters]
+			enabled = true
+
+		[modules.transport.black_hole_controller]
 			enabled = true
 
 	#A collection of Industrial Foregoing tools
@@ -139,10 +156,10 @@
 		[modules.tools.mob_imprisonment_tool]
 			enabled = true
 
-		[modules.tools.mob_essence_tool]
+		[modules.tools.infinity_saw]
 			enabled = true
 
-		[modules.tools.infinity_saw]
+		[modules.tools.infinity_backpack]
 			enabled = true
 
 		[modules.tools.infinity_hammer]
@@ -151,13 +168,22 @@
 	[modules.resource_production]
 		enabled = true
 
+		[modules.resource_production.washing_factory]
+			enabled = true
+
 		[modules.resource_production.material_stonework_factory]
+			enabled = true
+
+		[modules.resource_production.fluid_sieving_machine]
 			enabled = true
 
 		[modules.resource_production.mechanical_dirt]
 			enabled = true
 
 		[modules.resource_production.block_breaker]
+			enabled = true
+
+		[modules.resource_production.fermentation_station]
 			enabled = true
 
 		[modules.resource_production.marine_fisher]

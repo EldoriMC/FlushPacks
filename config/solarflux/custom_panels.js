@@ -38,7 +38,7 @@ define english "en_us"
 func init()
 {
 	// Example: (textures are extracted in /textures/ by default), uncomment to try it out! (Requires game restart)
-	
+	/*
 	panel()
 		.name("example")
 		.height(8 / 16.0)
@@ -56,5 +56,5 @@ func init()
 			.bind('c', item("chorus_fruit"))
 			.bind('h', item("dragon_head"))
 		.build(2);
-	
+	*/
 }
