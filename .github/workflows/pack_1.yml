@@ -27,6 +27,9 @@ jobs:
         filename: 'technic.zip'
         exclusions: '*.git* *.github* README.md server-icon.png instance.cfg mmc-pack.json /*OnixMC/*'
 
+    - name: Remove bin Folder
+      run: rm -rf bin
+
     - name: Create MultiMC Zip File
       uses: thedoctor0/zip-release@master
       with:
