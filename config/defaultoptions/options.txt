@@ -27,7 +27,7 @@ renderDistance:12
 entityDistanceScaling:1.0
 guiScale:2
 particles:0
-maxFps:120
+maxFps:260
 difficulty:2
 graphicsMode:1
 ao:2
@@ -62,11 +62,11 @@ tutorialStep:none
 mouseWheelSensitivity:1.0
 rawMouseInput:true
 glDebugVerbosity:1
-skipMultiplayerWarning:false
+skipMultiplayerWarning:true
 hideMatchedNames:true
 joinedFirstServer:false
 syncChunkWrites:true
-soundCategory_master:0.0
+soundCategory_master:0.048013244
 soundCategory_music:1.0
 soundCategory_record:1.0
 soundCategory_weather:1.0

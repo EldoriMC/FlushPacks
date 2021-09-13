@@ -14,7 +14,8 @@ jobs:
       run: |
         sudo mkdir OnixMC
         sudo mkdir OnixMC/.minecraft
-        sudo rsync -a kubejs OnixMC/.minecraft/
+        # sudo rsync -a kubejs OnixMC/.minecraft/
+        sudo rsync -a scripts OnixMC/.minecraft/
         sudo rsync -a mods OnixMC/.minecraft/
         sudo rsync -a config OnixMC/.minecraft/
         sudo rsync -a server-icon.png OnixMC/
@@ -44,7 +45,7 @@ jobs:
       with:
         repo_token: ${{ secrets.TOKEN }}
         file: technic.zip
-        asset_name: modpack_technic.zip
+        asset_name: onixmc_technic.zip
         tag: pack_1
         overwrite: true
 
@@ -53,7 +54,7 @@ jobs:
       with:
         repo_token: ${{ secrets.TOKEN }}
         file: multimc.zip
-        asset_name: OnixMC.zip
+        asset_name: onixmc-multimc.zip
         tag: pack_1
         overwrite: true
 
