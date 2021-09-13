@@ -54,7 +54,7 @@ jobs:
       with:
         repo_token: ${{ secrets.TOKEN }}
         file: multimc.zip
-        asset_name: onixmc-multimc.zip
+        asset_name: onixmc_multimc.zip
         tag: pack_1
         overwrite: true
 
