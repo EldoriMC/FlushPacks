@@ -15,7 +15,7 @@ jobs:
         sudo mkdir OnixMC
         sudo mkdir OnixMC/.minecraft
         # sudo rsync -a kubejs OnixMC/.minecraft/
-        sudo rsync -a scripts OnixMC/.minecraft/
+        # sudo rsync -a scripts OnixMC/.minecraft/
         sudo rsync -a mods OnixMC/.minecraft/
         sudo rsync -a config OnixMC/.minecraft/
         sudo rsync -a server-icon.png OnixMC/
