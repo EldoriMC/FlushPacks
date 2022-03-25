@@ -12,21 +12,21 @@ jobs:
 
     - name: Configure folder to MultiMC
       run: |
-        sudo mkdir OnixMC
-        sudo mkdir OnixMC/.minecraft
-        # sudo rsync -a kubejs OnixMC/.minecraft/
-        # sudo rsync -a scripts OnixMC/.minecraft/
-        sudo rsync -a mods OnixMC/.minecraft/
-        sudo rsync -a config OnixMC/.minecraft/
-        sudo rsync -a server-icon.png OnixMC/
-        sudo rsync -a instance.cfg OnixMC/
-        sudo rsync -a mmc-pack.json OnixMC/
+        sudo mkdir FlushMC
+        sudo mkdir FlushMC/.minecraft
+        # sudo rsync -a kubejs FlushMC/.minecraft/
+        # sudo rsync -a scripts FlushMC/.minecraft/
+        sudo rsync -a mods FlushMC/.minecraft/
+        sudo rsync -a config FlushMC/.minecraft/
+        sudo rsync -a server-icon.png FlushMC/
+        sudo rsync -a instance.cfg FlushMC/
+        sudo rsync -a mmc-pack.json FlushMC/
 
     - name: Create Technic Zip File
       uses: thedoctor0/zip-release@master
       with:
         filename: 'technic.zip'
-        exclusions: '*.git* *.github* README.md server-icon.png instance.cfg mmc-pack.json /*OnixMC/*'
+        exclusions: '*.git* *.github* README.md server-icon.png instance.cfg mmc-pack.json /*FlushMC/*'
 
     - name: Remove bin Folder
       run: rm -rf bin
@@ -45,7 +45,7 @@ jobs:
       with:
         repo_token: ${{ secrets.TOKEN }}
         file: technic.zip
-        asset_name: onixmc_technic.zip
+        asset_name: flushmc_technic.zip
         tag: pack_1
         overwrite: true
 
@@ -54,7 +54,7 @@ jobs:
       with:
         repo_token: ${{ secrets.TOKEN }}
         file: multimc.zip
-        asset_name: onixmc_multimc.zip
+        asset_name: flushmc_multimc.zip
         tag: pack_1
         overwrite: true
 
@@ -63,8 +63,8 @@ jobs:
       with:
         severity: info
         webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
-        username: OnixMC
+        username: FlushMC
         color: '#f78520'
-        avatarUrl: 'https://raw.githubusercontent.com/OnixMC/OnixPacks/master/server-icon.png'
+        avatarUrl: 'https://raw.githubusercontent.com/Flush-mc/FlushPacks/master/server-icon.png'
         description: Nova versão do modpack disponibilizada.
         # details: 'http://api.technicpack.net/modpack/modpack_name'
