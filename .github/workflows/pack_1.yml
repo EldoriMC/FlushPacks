@@ -25,6 +25,9 @@ jobs:
         filename: 'multimc.zip'
         directory: 'workdir/multimc'
 
+    - name: List Files
+      run: ls
+
     - name: Upload Technic Release Version
       uses: svenstaro/upload-release-action@v2
       with:
