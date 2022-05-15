@@ -25,18 +25,13 @@ jobs:
         filename: 'multimc.zip'
         directory: 'workdir/multimc'
 
-    - name: List Files
-      run: |
-        ls
-        ls workdir -R
-
     - name: Upload Technic Release Version
       uses: svenstaro/upload-release-action@v2
       with:
         repo_token: ${{ secrets.TOKEN }}
         file: workdir/technic/technic.zip
         asset_name: technic.zip
-        tag: pack
+        tag: ${{ secrets.MODPACK_NAME }}
         overwrite: true
 
     - name: Upload MultiMC Release Version
@@ -45,12 +40,12 @@ jobs:
         repo_token: ${{ secrets.TOKEN }}
         file: workdir/multimc/multimc.zip
         asset_name: multimc.zip
-        tag: pack
+        tag: ${{ secrets.MODPACK_NAME }}
         overwrite: true
 
     - name: Send message to discord
       uses: Sniddl/discord-commits@v1.3
       with:
         webhook: ${{ secrets.DISCORD_WEBHOOK }}
-        message: " "
+        message: "📢"
         embed: '{"title": "**Atualização**","description": "{{ env.DISCORD_MESSAGE }}","author": {"name": "{{ env.DISCORD_NAME }}", "icon_url": "{{ env.DISCORD_AVATAR }}"}}'
