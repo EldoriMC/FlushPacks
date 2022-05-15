@@ -44,7 +44,7 @@ jobs:
         overwrite: true
 
     - name: Notify Discord
-      uses: zzzze/webhook-trigger@master
+      uses: jasongitmail/fast-webhook@v1
       with:
-        data: "${{ secrets.DISCORD_MESSAGE }}"
-        webhook_url: ${{ secrets.DISCORD_WEBHOOK }}
+        url: ${{ secrets.DISCORD_WEBHOOK }}
+        json: '${{ secrets.DISCORD_MESSAGE }}'
