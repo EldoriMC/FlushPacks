@@ -26,13 +26,15 @@ jobs:
         directory: 'workdir/multimc'
 
     - name: List Files
-      run: ls
+      run: |
+        ls
+        ls workdir
 
     - name: Upload Technic Release Version
       uses: svenstaro/upload-release-action@v2
       with:
         repo_token: ${{ secrets.TOKEN }}
-        file: technic.zip
+        file: workdir/technic.zip
         asset_name: technic.zip
         tag: pack
         overwrite: true
@@ -41,7 +43,7 @@ jobs:
       uses: svenstaro/upload-release-action@v2
       with:
         repo_token: ${{ secrets.TOKEN }}
-        file: multimc.zip
+        file: workdir/multimc.zip
         asset_name: multimc.zip
         tag: pack
         overwrite: true
