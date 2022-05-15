@@ -28,13 +28,13 @@ jobs:
     - name: List Files
       run: |
         ls
-        ls workdir
+        ls workdir -R
 
     - name: Upload Technic Release Version
       uses: svenstaro/upload-release-action@v2
       with:
         repo_token: ${{ secrets.TOKEN }}
-        file: workdir/technic.zip
+        file: workdir/technic/technic.zip
         asset_name: technic.zip
         tag: pack
         overwrite: true
@@ -43,7 +43,7 @@ jobs:
       uses: svenstaro/upload-release-action@v2
       with:
         repo_token: ${{ secrets.TOKEN }}
-        file: workdir/multimc.zip
+        file: workdir/multimc/multimc.zip
         asset_name: multimc.zip
         tag: pack
         overwrite: true
