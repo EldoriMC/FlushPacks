@@ -44,8 +44,19 @@ jobs:
         tag: ${{ secrets.MODPACK_NAME }}
         overwrite: true
 
+    # - name: Notify Discord
+    #   uses: jasongitmail/fast-webhook@v1
+    #   with:
+    #     url: ${{ secrets.DISCORD_WEBHOOK }}
+    #     json: '${{ secrets.DISCORD_MESSAGE }}'
+
     - name: Notify Discord
-      uses: jasongitmail/fast-webhook@v1
+      uses: rjstone/discord-webhook-notify@v1
       with:
-        url: ${{ secrets.DISCORD_WEBHOOK }}
-        json: '${{ secrets.DISCORD_MESSAGE }}'
+        severity: info
+        webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
+        username: FlushMC
+        color: '#f78520'
+        avatarUrl: 'https://i.imgur.com/oGm7BhI.png'
+        description: '📢 Nova versão do modpack disponibilizada. 🎉 🎉\n\n**Download**\n🔸`MultiMC`: https://links.flushmc.com/modpack/FlushPack/multimc\n🔸`Technic`: https://links.flushmc.com/modpack/FlushPack/technic\n'
+        # details: 'http://api.technicpack.net/modpack/modpack_name'
