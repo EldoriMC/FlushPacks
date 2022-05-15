@@ -43,9 +43,8 @@ jobs:
         tag: ${{ secrets.MODPACK_NAME }}
         overwrite: true
 
-    - name: Send message to discord
-      uses: Sniddl/discord-commits@v1.3
+    - name: Notify Discord
+      uses: zzzze/webhook-trigger@master
       with:
-        webhook: ${{ secrets.DISCORD_WEBHOOK }}
-        message: "📢"
-        embed: '{"title": "**Atualização**","description": "{{ env.DISCORD_MESSAGE }}","author": {"name": "{{ env.DISCORD_NAME }}", "icon_url": "{{ env.DISCORD_AVATAR }}"}}'
+        data: "${{ secrets.DISCORD_MESSAGE }}"
+        webhook_url: ${{ secrets.DISCORD_WEBHOOK }}
