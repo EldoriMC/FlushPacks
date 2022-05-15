@@ -1,0 +1,48 @@
+[
+    {
+        "platform": "technic",
+        "name": "",
+        "setup": [
+            {
+                "source": "data/bin",
+                "destination": "bin",
+                "files": []
+            },
+            {
+                "source": "data/mods",
+                "destination": "mods",
+                "files": []
+            },
+            {
+                "source": "data/config",
+                "destination": "config",
+                "files": []
+            }
+        ]
+    },
+    {
+        "platform": "multimc",
+        "name": "FlushMC",
+        "setup": [
+            {
+                "source": "data/mods",
+                "destination": "{{name}}/.minecraft/mods",
+                "files": []
+            },
+            {
+                "source": "data/config",
+                "destination": "{{name}}/.minecraft/config",
+                "files": []
+            },
+            {
+                "source": "data",
+                "destination": "{{name}}/",
+                "files": [
+                    "instance.cfg",
+                    "mmc-pack.json",
+                    "server-icon.png"
+                ]
+            }
+        ]
+    }
+]

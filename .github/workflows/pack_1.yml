@@ -10,43 +10,28 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Configure folder to MultiMC
-      run: |
-        sudo mkdir FlushMC
-        sudo mkdir FlushMC/.minecraft
-        # sudo rsync -a kubejs FlushMC/.minecraft/
-        # sudo rsync -a scripts FlushMC/.minecraft/
-        sudo rsync -a mods FlushMC/.minecraft/
-        sudo rsync -a config FlushMC/.minecraft/
-        sudo rsync -a server-icon.png FlushMC/
-        sudo rsync -a instance.cfg FlushMC/
-        sudo rsync -a mmc-pack.json FlushMC/
+    - name: Build Artifacts
+      run: builder
 
     - name: Create Technic Zip File
       uses: thedoctor0/zip-release@master
       with:
         filename: 'technic.zip'
-        exclusions: '*.git* *.github* README.md server-icon.png instance.cfg mmc-pack.json /*FlushMC/*'
-
-    - name: Remove bin Folder
-      run: rm -rf bin
+        directory: 'workdir/technic'
 
     - name: Create MultiMC Zip File
       uses: thedoctor0/zip-release@master
       with:
         filename: 'multimc.zip'
-        exclusions: '*.git* *.github* /mods/* /kubejs/* *bin* /bin/** /config/* README.md server-icon.png mmc-pack.json instance.cfg technic.zip'
-
-    - name: List Files
-      run: ls
+        directory: 'workdir/multimc'
 
     - name: Upload Technic Release Version
       uses: svenstaro/upload-release-action@v2
       with:
         repo_token: ${{ secrets.TOKEN }}
         file: technic.zip
-        asset_name: flushmc_technic.zip
-        tag: pack_1
+        asset_name: technic.zip
+        tag: pack
         overwrite: true
 
     - name: Upload MultiMC Release Version
@@ -54,17 +39,13 @@ jobs:
       with:
         repo_token: ${{ secrets.TOKEN }}
         file: multimc.zip
-        asset_name: flushmc_multimc.zip
-        tag: pack_1
+        asset_name: multimc.zip
+        tag: pack
         overwrite: true
 
-    - name: Notify Discord
-      uses: rjstone/discord-webhook-notify@v1
+    - name: Send message to discord
+      uses: Sniddl/discord-commits@v1.3
       with:
-        severity: info
-        webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
-        username: FlushMC
-        color: '#f78520'
-        avatarUrl: 'https://raw.githubusercontent.com/Flush-mc/FlushPacks/master/server-icon.png'
-        description: Nova versão do modpack disponibilizada.
-        # details: 'http://api.technicpack.net/modpack/modpack_name'
+        webhook: ${{ secrets.DISCORD_WEBHOOK }}
+        message: " "
+        embed: '{"title": "**Atualização**","description": "{{ env.DISCORD_MESSAGE }}","author": {"name": "{{ env.DISCORD_NAME }}", "icon_url": "{{ env.DISCORD_AVATAR }}"}}'
