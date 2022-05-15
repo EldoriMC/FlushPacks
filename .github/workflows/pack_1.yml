@@ -59,4 +59,3 @@ jobs:
         color: '#f78520'
         avatarUrl: 'https://i.imgur.com/oGm7BhI.png'
         description: '📢 Nova versão do modpack disponibilizada. 🎉 🎉\n\n**Download**\n🔸`MultiMC`: https://links.flushmc.com/modpack/FlushPack/multimc\n🔸`Technic`: https://links.flushmc.com/modpack/FlushPack/technic\n'
-        # details: 'http://api.technicpack.net/modpack/modpack_name'
